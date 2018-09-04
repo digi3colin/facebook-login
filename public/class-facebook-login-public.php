@@ -271,7 +271,7 @@ class Facebook_Login_Public {
 
 		if ( $user_obj ){
 			$user_id = $user_obj->ID;
-			$status = array( 'success' => $user_id, 'method' => 'login');
+			$status = array( 'success' => $user_id, 'method' => 'login', 'displayName' => $user_obj->display_name);
 			// check if user email exist or update accordingly
 			if( empty( $user_obj->user_email ) )
 				wp_update_user( array( 'ID' => $user_id, 'user_email' => $user['user_email'] ) );
